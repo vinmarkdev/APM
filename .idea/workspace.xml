@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="35165227-bc3c-4a66-a340-6fd5ae2870d6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/services/activeRecord.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/api/services/security.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/services/Backend.js" />
-    </list>
+    <list default="true" id="35165227-bc3c-4a66-a340-6fd5ae2870d6" name="Default" comment="" />
     <ignored path="APM.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -410,12 +405,12 @@
       <option name="presentableId" value="Default" />
       <updated>1511643214774</updated>
       <workItem from="1511643217021" duration="25237000" />
-      <workItem from="1511714675744" duration="6630000" />
+      <workItem from="1511714675744" duration="7222000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31867000" />
+    <option name="totallyTimeSpent" value="32459000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1688" y="-630" width="1696" height="1026" extended-state="6" />
