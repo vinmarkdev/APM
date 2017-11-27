@@ -7,13 +7,24 @@ module.exports = function SignupCtr($scope,$state,Backend){
 
     $scope.init = init;
     $scope.signUp = signUp;
+    $scope.toggle = toggle;
+    //$scope.showform = true;
 
     $scope.init();
 
     function init(){
         console.log($scope.location);
+        toggle();
     }
 
+    
+    function toggle() {
+        $('form').animate({height: "toggle", opacity: "toggle"}, "slow").promise().then(
+        function(r){
+            //$scope.showform = false;
+        });
+    }
+    
     function signUp() {
         $scope.error_msg = "";
         
