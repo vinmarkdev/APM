@@ -1,0 +1,42 @@
+<div class="login-container">
+
+    <div class="login-box animated fadeInDown">
+        <div class="login-logo"></div>
+        <div class="login-body" >
+            <div class="login-title"><strong>Please</strong>, set new password</div>
+
+            <div ng-if="error_msg" class="alert alert-danger" role="alert">
+                <button ng-click="hideerror()" type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                <strong>Oh!</strong> {{error_msg}}.
+            </div>
+
+            <form class="form-horizontal" method="post">
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <input ng-model="reset_obj.password" name="password" type="password" class="form-control" placeholder="Password" required/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <input ng-model="reset_obj.confirm_password" name="confirm_password" type="password" class="form-control" placeholder="Confirm Password" required/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-12">
+                        <button ng-click="submit()"  class="btn btn-info btn-block">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="login-footer">
+            <div class="pull-left">
+                &copy; {{dateStart}}
+            </div>
+            <div class="pull-right">
+                <a ng-click="go_login()">Login</a> |
+                <a ng-click="go_contactus()">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
+</div>
