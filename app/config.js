@@ -13,6 +13,7 @@ module.exports = function ($stateProvider, $urlRouterProvider, $httpProvider){
 
 	$urlRouterProvider.otherwise('/404');
 
+    
 	$stateProvider
 		.state('404', {
             url: '/404',

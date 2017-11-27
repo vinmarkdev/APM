@@ -42,11 +42,19 @@ class User extends dbObject{
             $users = User::where("email",$this->data['email'],"=")->get();
 
             if(!count($users)>0){
+                
+                $this->data['password']= md5(md5($this->data['password']));
+                $this->data['reg_date']= time();
+                
                 $user = new User($this->data);
-                $user->password = md5(md5($user->password));
-                $user->reg_date = time();
-
+                
+                
+                /*$user->password = md5(md5($user->password));
+                $user->reg_date = time();*/
+                
+//return array("Error" => null, "Message" => $user);
                 $result = $user->save();
+                
                 if($result){
                     return array("Error" => null, "Message" => "Sig up finished success");
                 }else{
@@ -74,7 +82,7 @@ class User extends dbObject{
 
             if($user[0]){
                 $user[0]->last_login = time();
-                $user[0]->token = md5(time());
+                $user[0]->token = md5($user[0]->password . time());
                 $user[0]->ip = $_SERVER['REMOTE_ADDR'];
 
                 session_start();
@@ -101,7 +109,9 @@ class User extends dbObject{
     
     public function testAction(){
         /*$file = fopen("log.txt","a");
-        fwrite($file,print_r("key: ". $_SESSION['security_check'],true));
+        fwrite($file,print_r("key: ". "\n",true));
+        fwrite($file,print_r($_SESSION['security_check'],true));
+        fwrite($file,print_r("key: " . "\n",true));
         fclose($file);*/
 
         if($_SESSION['security_check'] == 0) return array("Error"=>"access deni");

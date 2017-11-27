@@ -56,3 +56,11 @@ typings/
 
 # dotenv environment variables file
 .env
+
+#phpshtorm / webshtorm
+.idea/*
+*/**/.idea/*
+
+# user custom settings
+config.php
+api/log.txt

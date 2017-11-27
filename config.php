@@ -2,11 +2,11 @@
 	//host
 	const host = 'localhost';
 	//user
-	const user = 'apm';
+	const user = 'admin';
 	//password
-	const password = 'apm';
+	const password = 'admin';
 	//base
-	const base = 'apm';
+	const base = 'lessonslist';
 
 
 	//sesiion time
