@@ -1,4 +1,5 @@
 <?php
+	//DB connection
 	//host
 	const host = 'localhost';
 	//user
@@ -6,8 +7,8 @@
 	//password
 	const password = 'admin';
 	//base
-	const base = 'lessonslist';
+	const base = 'base';
 
-
-	//sesiion time
+	//CORE settings
+	//sesiion time in seconds
 	const session_expiration = '7200';

@@ -2,7 +2,7 @@ module.exports = function LoginController($scope,$state,$window,$cookies,Backend
 
     $scope.location = "Login";
 
-    $scope.error_msg = "";
+    $scope.message = "";
     $scope.user = {};
     
     $scope.init = init;
@@ -15,7 +15,6 @@ module.exports = function LoginController($scope,$state,$window,$cookies,Backend
         console.log($scope.location);
         toggle();
     }
-
     
     function toggle() {
         $('form').animate({height: "toggle", opacity: "toggle"}, "slow").promise().then(
@@ -26,12 +25,19 @@ module.exports = function LoginController($scope,$state,$window,$cookies,Backend
     
     function login() {
         debugger;
+        if($scope.user.length() < 2) {
+
+        }
         Backend.login($scope.user).then(function (response) {
             if(!response.data.Error){
                 $state.go('dashboard');
+            }else{
+                $scope.message = response.data.Error;
+                $scope.status = "error";
             }
         },function (err) {
-            debugger;
+            $scope.message = err.message;
+            $scope.status = "error";
         })
     }
     

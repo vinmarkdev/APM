@@ -1,13 +1,13 @@
 <div class="user-wrapper">
     <div class="login">
         <div class="login-page">
-            
+
             <div class="form">
                 <div class="login-form-main-message"
                      ng-class="{show:message,success:status=='success',error:status=='error'}">{{message}}</div>
                 <form class="register-form" >
-                  <h2>Create an account</h2>
-                  <div class="form-group">
+                    <h2>Create an account</h2>
+                    <div class="form-group">
                             <label for="username" class="sr-only">Username</label>
                             <input type="text"
                                    class="form-control"
@@ -48,7 +48,7 @@
                                    placeholder="re password"
                                    required>
                         </div>
-                    
+
                     <button type="submit" class="login-button" ng-click="signUp()">Sign Up</button>
                   <p class="message">Already registered? <a  ui-sref="login" >Sign In</a></p>
                 </form>

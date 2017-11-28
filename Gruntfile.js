@@ -32,8 +32,9 @@ module.exports = function (grunt) {
         
         /** remove files from folder */
         clean: {
-			app: ['./public/dist/app.js', './public/dist/app.css', './public/dist/app.min.css'],
-			libs: ['./public/dist/libs.js', './public/dist/libs.css']
+			app: ['./public/dist/app.js'],
+			libs: ['./public/dist/libs.js', './public/dist/libs.css'],
+			style: ['./public/dist/app.css', './public/dist/app.min.css']
 		},
         
         /** concat libs files */
@@ -119,14 +120,13 @@ module.exports = function (grunt) {
 				files: [
                     './app/views/**/*.html',
                     './*.html'
-				],
-                tasks:['app']
+				]
 			},
 			scripts: {
 				files: [
 				    './app/**/*.js'
 				],
-				tasks: ['app']
+				tasks: ['compile']
 			},
 			css: {
 				files: ['./app/styles/**/*.scss'],
@@ -187,7 +187,9 @@ module.exports = function (grunt) {
 	/** tascks */
 	grunt.registerTask('default', ['app', 'libs', 'watch']);
 
-	grunt.registerTask('app', ['clean:app', 'sass', 'browserify:app']);
+	grunt.registerTask('compile', ['clean:app', 'browserify:app']);
+	grunt.registerTask('app', ['compile', 'sass']);
+
 	grunt.registerTask('libs', ['clean:libs', 'concat:libs', 'concat_css:libs']);
 
 	grunt.registerTask('release', ['libs', 'app', 'uglify', 'cssmin']);
