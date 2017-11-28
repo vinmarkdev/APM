@@ -15,7 +15,7 @@ module.exports = function LoginController($scope,$state,$window,$cookies,Backend
         console.log($scope.location);
         toggle();
     }
-    
+
     function toggle() {
         $('form').animate({height: "toggle", opacity: "toggle"}, "slow").promise().then(
         function(r){
@@ -24,21 +24,26 @@ module.exports = function LoginController($scope,$state,$window,$cookies,Backend
     }
     
     function login() {
-        debugger;
-        if($scope.user.length() < 2) {
-
-        }
-        Backend.login($scope.user).then(function (response) {
-            if(!response.data.Error){
-                $state.go('dashboard');
-            }else{
-                $scope.message = response.data.Error;
+        $scope.message = "";
+        $scope.status = "";
+        
+        if($scope.user) {
+            Backend.login($scope.user).then(function (response) {
+                if(!response.data.Error){
+                    $state.go('dashboard');
+                }else{
+                    $scope.message = response.data.Error;
+                    $scope.status = "error";
+                }
+            },function (err) {
+                $scope.message = err.message;
                 $scope.status = "error";
-            }
-        },function (err) {
-            $scope.message = err.message;
+            })
+        }else{
+            $scope.message = "Fill all fields";
             $scope.status = "error";
-        })
+        }
+
     }
     
     

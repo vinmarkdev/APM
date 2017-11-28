@@ -43,8 +43,8 @@ class User extends dbObject{
 
             if(!count($users)>0){
                 
-                $this->data['password']= md5(md5($this->data['password']));
-                $this->data['reg_date']= time();
+                $this->data['password'] = md5(md5($this->data['password']));
+                $this->data['reg_date'] = time();
                 
                 $user = new User($this->data);
                 
@@ -52,7 +52,6 @@ class User extends dbObject{
                 /*$user->password = md5(md5($user->password));
                 $user->reg_date = time();*/
                 
-//return array("Error" => null, "Message" => $user);
                 $result = $user->save();
                 
                 if($result){

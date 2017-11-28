@@ -55,7 +55,7 @@ module.exports = function (grunt) {
 
 				],
 				dest: './public/dist/libs.js'
-			},
+			}
 		},
         
         
@@ -137,7 +137,7 @@ module.exports = function (grunt) {
         /** compile scss files */
         sass: {
 	        dist: {
-	            sourceMap: true,
+	            sourceMap: false,
 	            files: {
 	                './public/dist/app.css': './app/styles/compile.scss'
 	            }
@@ -156,8 +156,8 @@ module.exports = function (grunt) {
 					"./other_modules/font-awesome/css/font-awesome.min.css"
 					],
 				dest: "./public/dist/libs.css"
-			},
-		},
+			}
+		}
 	});
 
 	/** concat all needed css files */
